@@ -162,7 +162,7 @@ dependency 'datadogpy'
 # be rebuilt (if put above, it would dirty the cache of the dependencies below
 # and trigger a useless rebuild of many packages)
 dependency 'datadog-gohai'
-dependency 'datadog-rtt'
+dependency 'datadog-metro'
 
 # Datadog agent
 dependency 'datadog-agent'
