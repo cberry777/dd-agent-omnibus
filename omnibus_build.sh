@@ -7,6 +7,7 @@
 ############################
 
 echo "######################### AGENT_BRANCH = ${AGENT_BRANCH}"
+echo "######################### AGENT_VERSION = ${AGENT_VERSION}"
 
 PROJECT_DIR=dd-agent-omnibus
 PROJECT_NAME=datadog-agent
