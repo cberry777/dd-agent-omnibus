@@ -139,6 +139,10 @@ dependency 'dnspython'
 dependency 'httplib2'
 dependency 'kafka-python'
 dependency 'kazoo'
+
+dependency 'dill'
+dependency 'multiprocess'
+
 dependency 'paramiko'
 dependency 'pg8000'
 dependency 'psutil'
