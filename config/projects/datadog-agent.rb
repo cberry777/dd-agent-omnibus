@@ -142,6 +142,7 @@ dependency 'kazoo'
 
 dependency 'dill'
 dependency 'multiprocess'
+dependency 'signalfx'
 
 dependency 'paramiko'
 dependency 'pg8000'
