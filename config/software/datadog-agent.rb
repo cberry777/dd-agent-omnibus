@@ -46,7 +46,12 @@ build do
         copy 'packaging/debian/start_agent.sh', '/opt/datadog-agent/bin/start_agent.sh'
         command 'chmod 755 /opt/datadog-agent/bin/start_agent.sh'
       end
-      copy 'packaging/supervisor.conf', '/etc/dd-agent/supervisor.conf'
+      # Use a supervisor conf with go-metro on 64-bit platforms only
+      if ohai['kernel']['machine'] == 'x86_64'
+        copy 'packaging/supervisor.conf', '/etc/dd-agent/supervisor.conf'
+      else
+        copy 'packaging/supervisor_32.conf', '/etc/dd-agent/supervisor.conf'
+      end
       copy 'datadog.conf.example', '/etc/dd-agent/datadog.conf.example'
       copy 'conf.d', '/etc/dd-agent/'
       mkdir '/etc/dd-agent/checks.d/'
@@ -119,7 +124,7 @@ build do
 
     # conf
     mkdir "#{install_dir}/etc"
-    command "grep -v 'user=dd-agent' packaging/supervisor.conf > #{install_dir}/etc/supervisor.conf"
+    copy "packaging/osx/supervisor.conf", "#{install_dir}/etc/supervisor.conf"
     copy 'datadog.conf.example', "#{install_dir}/etc/datadog.conf.example"
     command "cp -R conf.d #{install_dir}/etc/"
     copy 'packaging/osx/com.datadoghq.Agent.plist.example', "#{install_dir}/etc/"
