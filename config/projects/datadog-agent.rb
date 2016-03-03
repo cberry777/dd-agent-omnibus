@@ -142,7 +142,10 @@ dependency 'kazoo'
 
 dependency 'dill'
 dependency 'multiprocess'
+
 dependency 'signalfx'
+
+dependency 'python-confluent-schemaregistry'
 
 dependency 'paramiko'
 dependency 'pg8000'
