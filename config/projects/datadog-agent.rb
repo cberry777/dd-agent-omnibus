@@ -47,6 +47,10 @@ package :rpm do
   end
 end
 
+if redhat?
+  runtime_dependency 'initscripts'
+end
+
 # OSX .pkg specific flags
 package :pkg do
   identifier 'com.datadoghq.agent'
@@ -137,6 +141,7 @@ dependency 'zlib'
 
 # Check dependencies
 dependency 'adodbapi'
+dependency 'beautifulsoup4'
 dependency 'dnspython'
 dependency 'httplib2'
 dependency 'kafka-python'

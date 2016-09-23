@@ -12,8 +12,9 @@ echo "######################### AGENT_VERSION = ${AGENT_VERSION}"
 PROJECT_DIR=dd-agent-omnibus
 PROJECT_NAME=datadog-agent
 LOG_LEVEL=${LOG_LEVEL:-"info"}
-OMNIBUS_BRANCH=${OMNIBUS_BRANCH:-"master"}
-OMNIBUS_SOFTWARE_BRANCH=${OMNIBUS_SOFTWARE_BRANCH:-"master"}
+export OMNIBUS_BRANCH=${OMNIBUS_BRANCH:-"master"}
+export OMNIBUS_SOFTWARE_BRANCH=${OMNIBUS_SOFTWARE_BRANCH:-"master"}
+export OMNIBUS_RUBY_BRANCH=${OMNIBUS_RUBY_BRANCH:-"datadog-5.0.0"}
 
 # Clean up omnibus artifacts
 rm -rf /var/cache/omnibus/pkg/*
